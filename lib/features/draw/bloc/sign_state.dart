@@ -20,8 +20,8 @@ class SignInitial extends SignState {
           controller ??
               SignatureController(
                 penStrokeWidth: 5,
-                penColor: Colors.red,
-                exportBackgroundColor: Colors.blue,
+                penColor: Colors.black,
+                exportBackgroundColor: Colors.white,
               ),
           status,
           message,
