@@ -2,9 +2,9 @@ part of 'sign_gallery_bloc.dart';
 
 @immutable
 abstract class SignGalleryState {
-  final Future<List<FileSystemEntity>> images;
+  final List<FileSystemEntity> images;
 
-  SignGalleryState(): images = _imageList;
+  const SignGalleryState(this.images);
 
   static Future<List<FileSystemEntity>> get _imageList async {
     final path = (await getApplicationDocumentsDirectory()).path;
@@ -13,6 +13,10 @@ abstract class SignGalleryState {
 
     return files;
   }
+
+  Future<List<FileSystemEntity>> get imageList async => _imageList;
 }
 
-class SignGalleryInitial extends SignGalleryState {}
+class SignGalleryInitial extends SignGalleryState {
+  const SignGalleryInitial(List<FileSystemEntity> images) : super(images);
+}
