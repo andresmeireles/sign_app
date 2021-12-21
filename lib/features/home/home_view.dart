@@ -14,6 +14,10 @@ class HomeView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
+              onPressed: () => Navigator.of(context).pushNamed('form'),
+              child: const Text('cadastro'),
+            ),
+            ElevatedButton(
               onPressed: () => Navigator.of(context).pushNamed('draw'),
               child: const Text('draw sign'),
             ),
